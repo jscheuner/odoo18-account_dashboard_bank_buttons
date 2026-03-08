@@ -14,7 +14,7 @@
                         class="btn-secondary"/>
 
                 <button type="action"
-                        name="%(account_statement_import_file.action_account_statement_import)d"
+                        name="%(account_statement_import_file.account_statement_import_action)d"
                         string="Import CAMT"
                         class="btn-primary"/>
             </xpath>

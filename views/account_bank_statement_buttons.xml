@@ -21,7 +21,7 @@
         <field name="inherit_id" ref="account.view_bank_statement_tree"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//list" position="before">
+            <xpath expr="//list" position="inside">
                 <header>
                     <button type="action"
                             name="%(action_account_bank_statement_all_custom)d"
@@ -41,26 +41,27 @@
     <!-- ====================================================== -->
     <!-- Relevé bancaire : formulaire -->
     <!-- ====================================================== -->
-
     <record id="view_bank_statement_form_inherit_buttons_custom" model="ir.ui.view">
         <field name="name">account.bank.statement.form.inherit.buttons.custom</field>
         <field name="model">account.bank.statement</field>
-        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="inherit_id" ref="account_statement_base.view_bank_statement_form"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//form/header" position="inside">
+              <xpath expr="//div[@name='button_box']" position="inside">
                 <button type="action"
-                        name="%(action_account_bank_statement_all_custom)d"
-                        string="Relevés"
-                        class="btn-secondary"/>
+                    name="%(action_account_bank_statement_all_custom)d"
+                    string="Relevés"
+                    class="btn-secondary"/>
 
                 <button type="action"
-                        name="%(account_statement_import_file.action_account_statement_import)d"
-                        string="Import CAMT"
-                        class="btn-primary"/>
+                    name="%(account_statement_import_file.account_statement_import_action)d"
+                    string="Import CAMT"
+                    class="btn-primary"/>
             </xpath>
 
         </field>
     </record>
+
+
 
 </odoo>

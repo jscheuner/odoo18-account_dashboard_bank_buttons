@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_reconcile_form_inherit_buttons_custom" model="ir.ui.view">
+        <field name="name">account.reconcile.form.inherit.buttons.custom</field>
+        <field name="model">account.reconcile.model"/>
+        <field name="inherit_id" ref="account_reconcile_oca.account_reconcile_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/header" position="inside">
+                <button type="action"
+                        name="%(action_account_bank_statement_all_custom)d"
+                        string="Relevés"
+                        class="btn-secondary"/>
+
+                <button type="action"
+                        name="%(account_statement_import_file.action_account_statement_import)d"
+                        string="Import CAMT"
+                        class="btn-primary"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

@@ -12,6 +12,8 @@
     ],
     "data": [
         "views/account_journal_dashboard.xml",
+        "views/account_bank_statement_buttons.xml",
+        "views/account_reconcile_buttons.xml",
     ],
     "installable": True,
     "application": False,

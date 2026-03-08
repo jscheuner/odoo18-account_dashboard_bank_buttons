@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ====================================================== -->
+    <!-- Actions -->
+    <!-- ====================================================== -->
+
+    <record id="action_account_bank_statement_all_custom" model="ir.actions.act_window">
+        <field name="name">Relevés bancaires</field>
+        <field name="res_model">account.bank.statement</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- ====================================================== -->
+    <!-- Relevés bancaires : liste -->
+    <!-- ====================================================== -->
+
+    <record id="view_bank_statement_tree_inherit_buttons_custom" model="ir.ui.view">
+        <field name="name">account.bank.statement.tree.inherit.buttons.custom</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//list" position="before">
+                <header>
+                    <button type="action"
+                            name="%(action_account_bank_statement_all_custom)d"
+                            string="Relevés"
+                            class="btn-secondary"/>
+
+                    <button type="action"
+                            name="%(account_statement_import_file.action_account_statement_import)d"
+                            string="Import CAMT"
+                            class="btn-primary"/>
+                </header>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- ====================================================== -->
+    <!-- Relevé bancaire : formulaire -->
+    <!-- ====================================================== -->
+
+    <record id="view_bank_statement_form_inherit_buttons_custom" model="ir.ui.view">
+        <field name="name">account.bank.statement.form.inherit.buttons.custom</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/header" position="inside">
+                <button type="action"
+                        name="%(action_account_bank_statement_all_custom)d"
+                        string="Relevés"
+                        class="btn-secondary"/>
+
+                <button type="action"
+                        name="%(account_statement_import_file.action_account_statement_import)d"
+                        string="Import CAMT"
+                        class="btn-primary"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
